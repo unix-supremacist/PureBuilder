@@ -29,5 +29,5 @@ purebuilder: modrinth versionid determined for project ghjoiQAl as ycwEopzo
 purebuilder: curseforge api request for projectid 261029 and version 1.7.10
 purebuilder: curseforge fileid determined for project 261029 as 2938923
 purebuilder: github api request for repoid GTNewHorizons/EnderIO
-purebuilder: tmp/EnderIO-2.4.2.jar exists not redownloading
-purebuilder: file tmp/EnderIO-2.4.2.jar hashed as c643addea8edce28a60fb753b2b85657
+purebuilder: downloaded file EnderIO-2.4.3-pre.jar to tmp/EnderIO-2.4.3-pre.jar with size 5131798
+purebuilder: file tmp/EnderIO-2.4.3-pre.jar hashed as 25487d5d54baed0becb1e9539e59e3ac

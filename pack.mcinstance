@@ -98,7 +98,7 @@ side = both
 
 [Ender IO Unofficial]
 type = url
-url = https://github.com/GTNewHorizons/EnderIO/releases/download/2.4.2/EnderIO-2.4.2.jar
-destination = mods/EnderIO-2.4.2.jar
-MD5 = c643addea8edce28a60fb753b2b85657
+url = https://github.com/GTNewHorizons/EnderIO/releases/download/2.4.3-pre/EnderIO-2.4.3-pre.jar
+destination = mods/EnderIO-2.4.3-pre.jar
+MD5 = 25487d5d54baed0becb1e9539e59e3ac
 side = both
