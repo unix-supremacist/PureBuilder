@@ -1,0 +1,96 @@
+{
+	"mcv": "1.7.10",
+	"mods": [
+		{
+			"name": "Anti ID Conflict",
+			"type": "curseforge",
+			"projectid": "246288",
+			"side": "both"
+		},
+		{
+			"name": "ArchaicFix",
+			"type": "curseforge",
+			"projectid": "677782",
+			"side": "both"
+		},
+		{
+			"name": "ASM Fixes",
+			"type": "curseforge",
+			"projectid": "244171",
+			"side": "both"
+		},
+		{
+			"name": "Audino",
+			"type": "modrinth",
+			"projectid": "9VVoLur5",
+			"side": "both"
+		},
+		{
+			"name": "Baubles Expanded",
+			"type": "modrinth",
+			"projectid": "pAqS7wsC",
+			"side": "both"
+		},
+		{
+			"name": "BetterFPS",
+			"type": "curseforge",
+			"projectid": "229876",
+			"side": "both"
+		},
+		{
+			"name": "BugTorch",
+			"type": "modrinth",
+			"projectid": "6su8A6OH",
+			"side": "both"
+		},
+		{
+			"name": "Chunk Purge",
+			"type": "curseforge",
+			"projectid": "237027",
+			"side": "both"
+		},
+		{
+			"name": "CodeChickenCore",
+			"type": "modrinth",
+			"projectid": "qMOdaUOs",
+			"side": "both"
+		},
+		{
+			"name": "CodeChickenLib",
+			"type": "modrinth",
+			"projectid": "oANLGIut",
+			"side": "both",
+			"destination": "mods/1.7.10/"
+		},
+		{
+			"name": "HodgePodge",
+			"type": "modrinth",
+			"projectid": "6QQe8Ldy",
+			"side": "both"
+		},
+		{
+			"name": "Ars Magica 2.5",
+			"type": "modrinth",
+			"projectid": "4NBV2LS4",
+			"side": "both"
+		},
+		{
+			"name": "UniMixins",
+			"type": "modrinth",
+			"projectid": "ghjoiQAl",
+			"side": "both"
+		},
+		{
+			"name": "UniQ",
+			"type": "curseforge",
+			"projectid": "261029",
+			"side": "both"
+		},
+		{
+			"name": "Ender IO Unofficial",
+			"type": "github",
+			"projectid": "GTNewHorizons/EnderIO",
+			"side": "both"
+		}
+	]
+}

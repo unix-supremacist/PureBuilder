@@ -1,0 +1,33 @@
+purebuilder: bld/technic/bin/modpack.jar exists not redownloading
+purebuilder: curseforge api request for projectid 246288 and version 1.7.10
+purebuilder: curseforge fileid determined for project 246288 as 2308279
+purebuilder: curseforge api request for projectid 677782 and version 1.7.10
+purebuilder: curseforge fileid determined for project 677782 as 4405338
+purebuilder: curseforge api request for projectid 244171 and version 1.7.10
+purebuilder: curseforge fileid determined for project 244171 as 2294974
+purebuilder: modrinth api request for projectid 9VVoLur5 and version 1.7.10
+purebuilder: modrinth versionid determined for project 9VVoLur5 as IWieTo3r
+purebuilder: modrinth api request for projectid pAqS7wsC and version 1.7.10
+purebuilder: modrinth versionid determined for project pAqS7wsC as uVJG9ptZ
+purebuilder: curseforge api request for projectid 229876 and version 1.7.10
+purebuilder: curseforge fileid determined for project 229876 as 2244002
+purebuilder: modrinth api request for projectid 6su8A6OH and version 1.7.10
+purebuilder: modrinth versionid determined for project 6su8A6OH as deAaraho
+purebuilder: curseforge api request for projectid 237027 and version 1.7.10
+purebuilder: curseforge fileid determined for project 237027 as 2263206
+purebuilder: modrinth api request for projectid qMOdaUOs and version 1.7.10
+purebuilder: modrinth versionid determined for project qMOdaUOs as uK1V66Fl
+purebuilder: modrinth api request for projectid oANLGIut and version 1.7.10
+purebuilder: modrinth versionid determined for project oANLGIut as 7rlH2gFw
+purebuilder: modrinth destination hard overwrote for project oANLGIut to mods/1.7.10/
+purebuilder: modrinth api request for projectid 6QQe8Ldy and version 1.7.10
+purebuilder: modrinth versionid determined for project 6QQe8Ldy as X5LIdsHe
+purebuilder: modrinth api request for projectid 4NBV2LS4 and version 1.7.10
+purebuilder: modrinth versionid determined for project 4NBV2LS4 as MJpULzRF
+purebuilder: modrinth api request for projectid ghjoiQAl and version 1.7.10
+purebuilder: modrinth versionid determined for project ghjoiQAl as ycwEopzo
+purebuilder: curseforge api request for projectid 261029 and version 1.7.10
+purebuilder: curseforge fileid determined for project 261029 as 2938923
+purebuilder: github api request for repoid GTNewHorizons/EnderIO
+purebuilder: tmp/EnderIO-2.4.2.jar exists not redownloading
+purebuilder: file tmp/EnderIO-2.4.2.jar hashed as c643addea8edce28a60fb753b2b85657
