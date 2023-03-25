@@ -39,6 +39,7 @@ type ModrinthMod struct {
 	Id string `json:"id"`
 	Files []struct {
 		Filename string `json:"filename"`
+		Url string `json:"url"`
 	} `json:"files"`
 }
 
@@ -61,6 +62,7 @@ type GithubAsset struct {
 type GithubMod struct{
 	Filename string
 	Url string
+	MMCUrl string
 	MD5 string
 }
 
@@ -70,26 +72,80 @@ func main(){
 	defer file.Close()
 
 	logger = log.New(file, "purebuilder: ", 0)
-
-	download("https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "bld/technic/bin/modpack.jar")
+	eror(os.RemoveAll("bld"))
 	createdirs()
-	zipfile("bld/technic/", "out/technic.zip")
 	jsonparse()
+	download("https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar")
+	copy("tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "bld/technic/bin/modpack.jar")
+	downloadmcil()
+	downloadunimixins()
+	downloadlwjgl3ify()
+	createinstance()
+	copy("8.json", "bld/multimc/mmc-pack.json")
 	createpackconfig()
+	zipdirs()
+}
+
+func downloadmcil(){
+	modrinthMod := apiModrinth("cUtsYbG5", pack.MinecraftVersion)
+	download(modrinthMod[0].Files[0].Url, "tmp/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/multimc/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/polymc/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/technic/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/modrinth/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/curse/mods/"+modrinthMod[0].Files[0].Filename)
+}
+
+func downloadunimixins(){
+	modrinthMod := apiModrinth("ghjoiQAl", pack.MinecraftVersion)
+	download(modrinthMod[0].Files[0].Url, "tmp/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/multimc/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/polymc/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/technic/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/modrinth/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/curse/mods/"+modrinthMod[0].Files[0].Filename)
+}
+
+func downloadlwjgl3ify(){
+	githubMod := apiGithub("GTNewHorizons/lwjgl3ify", false)
+	download(githubMod.Url, "tmp/"+githubMod.Filename)
+	download(githubMod.MMCUrl, "tmp/"+filenamefromurl(githubMod.MMCUrl))
+	unzip("tmp/"+filenamefromurl(githubMod.MMCUrl), "bld/polymc/")
+	copy("tmp/"+githubMod.Filename, "bld/polymc/mods/"+githubMod.Filename)
 }
 
 func createdirs(){
-	eror(os.MkdirAll("bld/multimc", os.ModePerm))
-	eror(os.MkdirAll("bld/polymc", os.ModePerm))
+	eror(os.MkdirAll("bld/multimc/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/polymc/mods", os.ModePerm))
 	eror(os.MkdirAll("bld/technic/bin", os.ModePerm))
-	eror(os.MkdirAll("bld/modrinth", os.ModePerm))
-	eror(os.MkdirAll("bld/curse", os.ModePerm))
-	eror(os.MkdirAll("bld/generic", os.ModePerm))
+	eror(os.MkdirAll("bld/technic/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/modrinth/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/curse/mods", os.ModePerm))
+	//eror(os.MkdirAll("bld/generic", os.ModePerm))
 	eror(os.MkdirAll("tmp", os.ModePerm))
 	eror(os.MkdirAll("src/config", os.ModePerm))
 	eror(os.MkdirAll("src/modpack", os.ModePerm))
 	eror(os.MkdirAll("src/mods", os.ModePerm))
 	eror(os.MkdirAll("out", os.ModePerm))
+}
+
+func zipdirs(){
+	zipfile("bld/curse/", "out/curse.zip")
+	zipfile("bld/modrinth/", "out/modrinth.zip")
+	zipfile("bld/multimc/", "out/multimc.zip")
+	zipfile("bld/polymc/", "out/polymc.zip")
+	zipfile("bld/technic/", "out/technic.zip")
+}
+
+func createinstance(){
+	f, err := os.Create("tmp/instance.cfg")
+	eror(err)
+	defer f.Close()
+	writeline(f, "InstanceType=OneSix\n")
+	writeline(f, "iconKey=flame\n")
+	writeline(f, "name="+pack.Name+"\n")
+	copy("tmp/instance.cfg", "bld/multimc/instance.cfg")
+	copy("tmp/instance.cfg", "bld/polymc/instance.cfg")
 }
 
 func jsonparse(){
@@ -114,7 +170,7 @@ func apiCurseforge(projectid string, mcv string) CurseforgeMod {
 	return curseforgeMod
 }
 
-func apiGithub(projectid string) (GithubMod) {
+func apiGithub(projectid string, hash bool) (GithubMod) {
 	var githubmod GithubMod
 	logger.Println("github api request for repoid "+projectid)
 	body := request("https://api.github.com/repos/"+projectid+"/releases")
@@ -124,15 +180,22 @@ func apiGithub(projectid string) (GithubMod) {
 	var githubassets []GithubAsset
 	eror(json.Unmarshal(body, &githubassets))
 	for _, v := range githubassets {
-		if (strings.Contains(strings.ToLower(v.Name), "dev") || strings.Contains(strings.ToLower(v.Name), "api") || strings.Contains(strings.ToLower(v.Name), "sources")) {
+		if (strings.Contains(strings.ToLower(v.Name), "dev") || strings.Contains(strings.ToLower(v.Name), "api") || strings.Contains(strings.ToLower(v.Name), "sources") || strings.Contains(strings.ToLower(v.Name), "patch") || strings.Contains(strings.ToLower(v.Name), "debug") || strings.Contains(strings.ToLower(v.Name), "agent")) {
+			continue
+		}
+		if (strings.Contains(strings.ToLower(v.Name), "multimc")) {
+			githubmod.MMCUrl = v.Url
 			continue
 		}
 		Filename := filenamefromurl(v.Url)
-		download(v.Url, "tmp/"+Filename)
 
+		if(hash == true){
+			download(v.Url, "tmp/"+Filename)
+			githubmod.MD5 = md5file("tmp/"+Filename)
+		}
 		githubmod.Filename = Filename
 		githubmod.Url = v.Url
-		githubmod.MD5 = md5file("tmp/"+Filename)
+
 	}
 	return githubmod
 }
@@ -204,7 +267,7 @@ func createpackconfig(){
 		}
 		if pack.Mods[i].Modtype == "github" {
 			writeline(f, "type = url\n")
-			githubMod := apiGithub(pack.Mods[i].Projectid)
+			githubMod := apiGithub(pack.Mods[i].Projectid, true)
 			writeline(f, "url = "+githubMod.Url+"\n")
 			if len(pack.Mods[i].Destination) > 0 {
 				logger.Println("github destination hard overwrote for project "+pack.Mods[i].Projectid+" to "+pack.Mods[i].Destination)
@@ -294,6 +357,41 @@ func zipfile(folder string, output string) {
 	}))
 }
 
+func unzip(src string, out string) error {
+	r, err := zip.OpenReader(src)
+	if err != nil {
+		return err
+	}
+	defer r.Close()
+
+	for _, f := range r.File {
+		rc, err := f.Open()
+		if err != nil {
+			return err
+		}
+		defer rc.Close()
+
+		path := filepath.Join(out, f.Name)
+		if f.FileInfo().IsDir() {
+			os.MkdirAll(path, f.Mode())
+		} else {
+			f, err := os.OpenFile(
+				path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+			if err != nil {
+				return err
+			}
+			defer f.Close()
+
+			_, err = io.Copy(f, rc)
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	return nil
+}
+
 func filenamefromurl(furl string) (string) {
 	fileURL, err := url.Parse(furl)
 	eror(err)
@@ -309,4 +407,13 @@ func fileexists(path string) (bool) {
 	if os.IsNotExist(err) { return false }
 	eror(err)
 	return false
+}
+
+func copy(path string, out string){
+	in, err := ioutil.ReadFile(path)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	eror(ioutil.WriteFile(out, in, 0644))
 }

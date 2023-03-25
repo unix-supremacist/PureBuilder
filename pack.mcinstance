@@ -82,13 +82,6 @@ destination = mods/AM2-1.5.0-hotfix.jar
 sourceFileName = AM2-1.5.0-hotfix.jar
 side = both
 
-[UniMixins]
-type = modrinth
-versionId = ycwEopzo
-destination = mods/_unimixins-all-1.7.10-0.1.5.jar
-sourceFileName = _unimixins-all-1.7.10-0.1.5.jar
-side = both
-
 [UniQ]
 type = curseforge
 projectId = 261029

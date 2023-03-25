@@ -1,4 +1,11 @@
-purebuilder: bld/technic/bin/modpack.jar exists not redownloading
+purebuilder: tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar exists not redownloading
+purebuilder: modrinth api request for projectid cUtsYbG5 and version 1.7.10
+purebuilder: tmp/mcinstanceloader-2.6.jar exists not redownloading
+purebuilder: modrinth api request for projectid ghjoiQAl and version 1.7.10
+purebuilder: tmp/_unimixins-all-1.7.10-0.1.5.jar exists not redownloading
+purebuilder: github api request for repoid GTNewHorizons/lwjgl3ify
+purebuilder: tmp/lwjgl3ify-1.3.1.jar exists not redownloading
+purebuilder: tmp/lwjgl3ify-1.3.1-multimc.zip exists not redownloading
 purebuilder: curseforge api request for projectid 246288 and version 1.7.10
 purebuilder: curseforge fileid determined for project 246288 as 2308279
 purebuilder: curseforge api request for projectid 677782 and version 1.7.10
@@ -24,10 +31,8 @@ purebuilder: modrinth api request for projectid 6QQe8Ldy and version 1.7.10
 purebuilder: modrinth versionid determined for project 6QQe8Ldy as 1xwiSkm6
 purebuilder: modrinth api request for projectid 4NBV2LS4 and version 1.7.10
 purebuilder: modrinth versionid determined for project 4NBV2LS4 as MJpULzRF
-purebuilder: modrinth api request for projectid ghjoiQAl and version 1.7.10
-purebuilder: modrinth versionid determined for project ghjoiQAl as ycwEopzo
 purebuilder: curseforge api request for projectid 261029 and version 1.7.10
 purebuilder: curseforge fileid determined for project 261029 as 2938923
 purebuilder: github api request for repoid GTNewHorizons/EnderIO
-purebuilder: downloaded file EnderIO-2.4.6.jar to tmp/EnderIO-2.4.6.jar with size 5131896
+purebuilder: tmp/EnderIO-2.4.6.jar exists not redownloading
 purebuilder: file tmp/EnderIO-2.4.6.jar hashed as 3e5e0b829accde3a59760713a3d3834c

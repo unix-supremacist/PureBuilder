@@ -77,12 +77,6 @@
 			"side": "both"
 		},
 		{
-			"name": "UniMixins",
-			"type": "modrinth",
-			"projectid": "ghjoiQAl",
-			"side": "both"
-		},
-		{
 			"name": "UniQ",
 			"type": "curseforge",
 			"projectid": "261029",

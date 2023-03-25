@@ -6,3 +6,4 @@
 go.work
 *.jar
 *.zip
+bld/*
