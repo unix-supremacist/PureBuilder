@@ -1,25 +1,29 @@
 package main
 
 import (
-    "fmt"
-    "io"
+	"fmt"
+	"io"
 	"io/ioutil"
-    "log"
-    //"net/http"
-    "net/url"
-    "os"
-    "strings"
+	"log"
+	//"net/http"
+	"net/url"
+	"os"
+	"strings"
 	"strconv"
 	"encoding/json"
 	"net/http"
 	"crypto/md5"
 	"encoding/hex"
+	"archive/zip"
+	"path/filepath"
 )
 
 var pack Pack
 var logger *log.Logger
 
 type Pack struct {
+	Name string `json:"name"`
+	Version string `json:"version"`
 	MinecraftVersion string `json:"mcv"`
 	Mods []struct {
 		Name string `json:"name"`
@@ -69,6 +73,7 @@ func main(){
 
 	download("https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "bld/technic/bin/modpack.jar")
 	createdirs()
+	zipfile("bld/technic/", "out/technic.zip")
 	jsonparse()
 	createpackconfig()
 }
@@ -81,12 +86,16 @@ func createdirs(){
 	eror(os.MkdirAll("bld/curse", os.ModePerm))
 	eror(os.MkdirAll("bld/generic", os.ModePerm))
 	eror(os.MkdirAll("tmp", os.ModePerm))
+	eror(os.MkdirAll("src/config", os.ModePerm))
+	eror(os.MkdirAll("src/modpack", os.ModePerm))
+	eror(os.MkdirAll("src/mods", os.ModePerm))
+	eror(os.MkdirAll("out", os.ModePerm))
 }
 
 func jsonparse(){
-    modString, err := ioutil.ReadFile("pack.json")
-    eror(err)
-    eror(json.Unmarshal([]byte(modString), &pack));
+	modString, err := ioutil.ReadFile("pack.json")
+	eror(err)
+	eror(json.Unmarshal([]byte(modString), &pack));
 }
 
 func apiModrinth(projectid string, mcv string) []ModrinthMod {
@@ -153,15 +162,15 @@ func request(s string) []byte{
 }
 
 func createpackconfig(){
-    f, err := os.Create("pack.mcinstance")
-    eror(err)
-    defer f.Close()
+	f, err := os.Create("pack.mcinstance")
+	eror(err)
+	defer f.Close()
 	for i:=0; i < len(pack.Mods); i++ {
 		if (i != 0){
 			writeline(f, "\n")
 		}
 		writeline(f, "["+pack.Mods[i].Name+"]\n")
-		
+
 		if pack.Mods[i].Modtype == "modrinth" {
 			writeline(f, "type = modrinth\n")
 			modrinthMod := apiModrinth(pack.Mods[i].Projectid, pack.MinecraftVersion)
@@ -216,8 +225,8 @@ func writeline(f *os.File, s string){
 
 func eror(err error){
 	if err != nil {
-        fmt.Println(err)
-    }
+		fmt.Println(err)
+	}
 }
 
 func download(fileURL string, location string){
@@ -226,39 +235,78 @@ func download(fileURL string, location string){
 		return
 	}
 	fileName := filenamefromurl(fileURL)
- 
-    file, err := os.Create(location)
-    eror(err)
-    client := http.Client{
-        CheckRedirect: func(r *http.Request, via []*http.Request) error {
-            r.URL.Opaque = r.URL.Path
-            return nil
-        },
-    }
-    resp, err := client.Get(fileURL)
-    eror(err)
-    defer resp.Body.Close()
- 
-    size, err := io.Copy(file, resp.Body)
- 
-    defer file.Close()
- 
-    logger.Println("downloaded file "+fileName+" to "+location+" with size "+strconv.Itoa(int(size)))
+
+	file, err := os.Create(location)
+	eror(err)
+	client := http.Client{
+		CheckRedirect: func(r *http.Request, via []*http.Request) error {
+			r.URL.Opaque = r.URL.Path
+			return nil
+		},
+	}
+	resp, err := client.Get(fileURL)
+	eror(err)
+	defer resp.Body.Close()
+
+	size, err := io.Copy(file, resp.Body)
+
+	defer file.Close()
+
+	logger.Println("downloaded file "+fileName+" to "+location+" with size "+strconv.Itoa(int(size)))
+}
+
+func zipfile(folder string, output string) {
+	f, err := os.Create(output)
+	eror(err)
+	defer f.Close()
+	writer := zip.NewWriter(f)
+	defer writer.Close()
+	eror(filepath.Walk(folder, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		header, err := zip.FileInfoHeader(info)
+		if err != nil {
+			return err
+		}
+		header.Method = zip.Deflate
+		header.Name, err = filepath.Rel(filepath.Dir(folder), path)
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			header.Name += "/"
+		}
+		headerWriter, err := writer.CreateHeader(header)
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			return nil
+		}
+		f, err := os.Open(path)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+		_, err = io.Copy(headerWriter, f)
+		return err
+	}))
 }
 
 func filenamefromurl(furl string) (string) {
 	fileURL, err := url.Parse(furl)
-    eror(err)
-    path := fileURL.Path
-    segments := strings.Split(path, "/")
-    fileName := segments[len(segments)-1]
+	eror(err)
+	path := fileURL.Path
+	segments := strings.Split(path, "/")
+	fileName := segments[len(segments)-1]
 	return fileName
 }
 
 func fileexists(path string) (bool) {
-    _, err := os.Stat(path)
-    if err == nil { return true }
-    if os.IsNotExist(err) { return false }
+	_, err := os.Stat(path)
+	if err == nil { return true }
+	if os.IsNotExist(err) { return false }
 	eror(err)
-    return false
+	return false
 }

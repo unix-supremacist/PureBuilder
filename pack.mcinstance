@@ -70,9 +70,9 @@ side = both
 
 [HodgePodge]
 type = modrinth
-versionId = X5LIdsHe
-destination = mods/hodgepodge-2.2.0.jar
-sourceFileName = hodgepodge-2.2.0.jar
+versionId = 1xwiSkm6
+destination = mods/hodgepodge-2.2.4.jar
+sourceFileName = hodgepodge-2.2.4.jar
 side = both
 
 [Ars Magica 2.5]
@@ -98,7 +98,7 @@ side = both
 
 [Ender IO Unofficial]
 type = url
-url = https://github.com/GTNewHorizons/EnderIO/releases/download/2.4.3-pre/EnderIO-2.4.3-pre.jar
-destination = mods/EnderIO-2.4.3-pre.jar
-MD5 = 25487d5d54baed0becb1e9539e59e3ac
+url = https://github.com/GTNewHorizons/EnderIO/releases/download/2.4.6/EnderIO-2.4.6.jar
+destination = mods/EnderIO-2.4.6.jar
+MD5 = 3e5e0b829accde3a59760713a3d3834c
 side = both

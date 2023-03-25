@@ -1,4 +1,6 @@
 {
+	"name": "puretest",
+	"version": "0.1",
 	"mcv": "1.7.10",
 	"mods": [
 		{
