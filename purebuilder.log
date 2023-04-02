@@ -1,25 +1,50 @@
-purebuilder: tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar exists not redownloading
 purebuilder: modrinth api request for projectid cUtsYbG5 and version 1.7.10
 purebuilder: tmp/mcinstanceloader-2.6.jar exists not redownloading
 purebuilder: modrinth api request for projectid ghjoiQAl and version 1.7.10
-purebuilder: tmp/_unimixins-all-1.7.10-0.1.5.jar exists not redownloading
-purebuilder: github api request for repoid GTNewHorizons/lwjgl3ify
-purebuilder: tmp/lwjgl3ify-1.3.1.jar exists not redownloading
-purebuilder: tmp/lwjgl3ify-1.3.1-multimc.zip exists not redownloading
+purebuilder: tmp/_unimixins-all-1.7.10-0.1.6.jar exists not redownloading
 purebuilder: curseforge api request for projectid 246288 and version 1.7.10
 purebuilder: curseforge fileid determined for project 246288 as 2308279
+purebuilder: modrinth api request for projectid c3I7Akgu and version 1.7.10
+purebuilder: modrinth versionid determined for project c3I7Akgu as 953OPgsW
+purebuilder: github api request for repoid GTNewHorizons/AE2FluidCraft-Rework
+purebuilder: github api request for repoid GTNewHorizons/Applied-Energistics-2-Unofficial
 purebuilder: curseforge api request for projectid 677782 and version 1.7.10
 purebuilder: curseforge fileid determined for project 677782 as 4405338
+purebuilder: modrinth api request for projectid 4NBV2LS4 and version 1.7.10
+purebuilder: modrinth versionid determined for project 4NBV2LS4 as MJpULzRF
 purebuilder: curseforge api request for projectid 244171 and version 1.7.10
 purebuilder: curseforge fileid determined for project 244171 as 2294974
 purebuilder: modrinth api request for projectid 9VVoLur5 and version 1.7.10
 purebuilder: modrinth versionid determined for project 9VVoLur5 as IWieTo3r
+purebuilder: curseforge api request for projectid 233785 and version 1.7.10
+purebuilder: curseforge fileid determined for project 233785 as 2519595
+purebuilder: curseforge api request for projectid 248873 and version 1.7.10
+purebuilder: curseforge fileid determined for project 248873 as 2502196
 purebuilder: modrinth api request for projectid pAqS7wsC and version 1.7.10
 purebuilder: modrinth versionid determined for project pAqS7wsC as uVJG9ptZ
 purebuilder: curseforge api request for projectid 229876 and version 1.7.10
 purebuilder: curseforge fileid determined for project 229876 as 2244002
+purebuilder: github api request for repoid GTNewHorizons/BloodMagic
+purebuilder: github api request for repoid GTNewHorizons/Botania
+purebuilder: github api request for repoid GTNewHorizons/BrandonsCore
 purebuilder: modrinth api request for projectid 6su8A6OH and version 1.7.10
 purebuilder: modrinth versionid determined for project 6su8A6OH as deAaraho
+purebuilder: modrinth api request for projectid 2YsMgHdw and version 1.7.10
+purebuilder: modrinth versionid determined for project 2YsMgHdw as S2d1nFLM
+purebuilder: modrinth api request for projectid 2YsMgHdw and version 1.7.10
+purebuilder: modrinth versionid determined for project 2YsMgHdw as S2d1nFLM
+purebuilder: modrinth api request for projectid UU9bGx2s and version 1.7.10
+purebuilder: modrinth versionid determined for project UU9bGx2s as trXYsJeM
+purebuilder: modrinth api request for projectid 6ZxBsmnh and version 1.7.10
+purebuilder: modrinth versionid determined for project 6ZxBsmnh as Bx14ogbQ
+purebuilder: modrinth api request for projectid ZV2Zwqln and version 1.7.10
+purebuilder: modrinth versionid determined for project ZV2Zwqln as sqh1qNq7
+purebuilder: modrinth api request for projectid YZGJU27K and version 1.7.10
+purebuilder: modrinth versionid determined for project YZGJU27K as AgEIhiJv
+purebuilder: modrinth api request for projectid yp1R2apI and version 1.7.10
+purebuilder: modrinth versionid determined for project yp1R2apI as A7Ic8NJr
+purebuilder: curseforge api request for projectid 235279 and version 1.7.10
+purebuilder: curseforge fileid determined for project 235279 as 2287442
 purebuilder: curseforge api request for projectid 237027 and version 1.7.10
 purebuilder: curseforge fileid determined for project 237027 as 2263206
 purebuilder: modrinth api request for projectid qMOdaUOs and version 1.7.10
@@ -27,12 +52,47 @@ purebuilder: modrinth versionid determined for project qMOdaUOs as uK1V66Fl
 purebuilder: modrinth api request for projectid oANLGIut and version 1.7.10
 purebuilder: modrinth versionid determined for project oANLGIut as 7rlH2gFw
 purebuilder: modrinth destination hard overwrote for project oANLGIut to mods/1.7.10/
+purebuilder: github api request for repoid makamys/CoreTweaks
+purebuilder: curseforge api request for projectid 411705 and version 1.7.10
+purebuilder: curseforge fileid determined for project 411705 as 3097543
+purebuilder: github api request for repoid GTNewHorizons/Draconic-Evolution
+purebuilder: modrinth api request for projectid u2Kd1AkA and version 1.7.10
+purebuilder: modrinth versionid determined for project u2Kd1AkA as kRyZ6phk
+purebuilder: github api request for repoid GTNewHorizons/EnderCore
+purebuilder: github api request for repoid GTNewHorizons/EnderIO
+purebuilder: github api request for repoid GTNewHorizons/EnderStorage
+purebuilder: curseforge api request for projectid 253077 and version 1.7.10
+purebuilder: curseforge fileid determined for project 253077 as 2577977
+purebuilder: modrinth api request for projectid v1s0VXQR and version 1.7.10
+purebuilder: modrinth versionid determined for project v1s0VXQR as fQNjMIes
+purebuilder: modrinth api request for projectid vTvnv7qp and version 1.7.10
+purebuilder: modrinth versionid determined for project vTvnv7qp as Xn4O8qI1
 purebuilder: modrinth api request for projectid 6QQe8Ldy and version 1.7.10
-purebuilder: modrinth versionid determined for project 6QQe8Ldy as 1xwiSkm6
-purebuilder: modrinth api request for projectid 4NBV2LS4 and version 1.7.10
-purebuilder: modrinth versionid determined for project 4NBV2LS4 as MJpULzRF
+purebuilder: modrinth versionid determined for project 6QQe8Ldy as a7qt1tE6
+purebuilder: github api request for repoid GTNewHorizons/IguanaTweaksTConstruct
+purebuilder: github api request for repoid GTNewHorizons/LogisticsPipes
+purebuilder: github api request for repoid GTNewHorizons/Mantle
+purebuilder: modrinth api request for projectid toGHjw6t and version 1.7.10
+purebuilder: modrinth versionid determined for project toGHjw6t as FqDIZP6S
+purebuilder: github api request for repoid GTNewHorizons/ModularUI
+purebuilder: modrinth api request for projectid iNPc3Onu and version 1.7.10
+purebuilder: modrinth versionid determined for project iNPc3Onu as vwenATWR
+purebuilder: github api request for repoid jss2a98aj/NotFine
+purebuilder: modrinth api request for projectid AbPBTO0Y and version 1.7.10
+purebuilder: modrinth versionid determined for project AbPBTO0Y as gG0DYyuO
+purebuilder: github api request for repoid GTNewHorizons/SC2
+purebuilder: github api request for repoid GTNewHorizons/Steve-s-Factory-Manager
+purebuilder: github api request for repoid GTNewHorizons/TinkersConstruct
+purebuilder: modrinth api request for projectid eh8us8FY and version 1.7.10
+purebuilder: modrinth versionid determined for project eh8us8FY as k2ramWD3
+purebuilder: curseforge api request for projectid 252200 and version 1.7.10
+purebuilder: curseforge fileid determined for project 252200 as 2350157
+purebuilder: curseforge api request for projectid 253043 and version 1.7.10
+purebuilder: curseforge fileid determined for project 253043 as 2430662
+purebuilder: github api request for repoid GTNewHorizons/waila
 purebuilder: curseforge api request for projectid 261029 and version 1.7.10
 purebuilder: curseforge fileid determined for project 261029 as 2938923
-purebuilder: github api request for repoid GTNewHorizons/EnderIO
-purebuilder: tmp/EnderIO-2.4.6.jar exists not redownloading
-purebuilder: file tmp/EnderIO-2.4.6.jar hashed as 3e5e0b829accde3a59760713a3d3834c
+purebuilder: tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar exists not redownloading
+purebuilder: github api request for repoid GTNewHorizons/lwjgl3ify
+purebuilder: tmp/lwjgl3ify-1.3.4.jar exists not redownloading
+purebuilder: tmp/lwjgl3ify-1.3.4-multimc.zip exists not redownloading

@@ -1,0 +1,407 @@
+[Anti ID Conflict]
+type = curseforge
+projectId = 246288
+fileId = 2308279
+destination = mods/AntiIdConflict-1.3.5-1.7.10.jar
+side = both
+
+[Apple Core Unofficial]
+type = modrinth
+versionId = 953OPgsW
+destination = mods/AppleCore-3.2.10.jar
+sourceFileName = AppleCore-3.2.10.jar
+side = both
+
+[Applied Energistics 2: Fluid Crafting]
+type = url
+url = https://github.com/GTNewHorizons/AE2FluidCraft-Rework/releases/download/1.1.7-gtnh/ae2fc-1.1.7-gtnh.jar
+destination = mods/ae2fc-1.1.7-gtnh.jar
+MD5 = 
+side = both
+
+[Applied Energistics 2 Unofficial]
+type = url
+url = https://github.com/GTNewHorizons/Applied-Energistics-2-Unofficial/releases/download/rv3-beta-190-GTNH/appliedenergistics2-rv3-beta-190-GTNH.jar
+destination = mods/appliedenergistics2-rv3-beta-190-GTNH.jar
+MD5 = 
+side = both
+
+[ArchaicFix]
+type = curseforge
+projectId = 677782
+fileId = 4405338
+destination = mods/archaicfix-0.5.0.jar
+side = both
+
+[Ars Magica 2.5]
+type = modrinth
+versionId = MJpULzRF
+destination = mods/AM2-1.5.0-hotfix.jar
+sourceFileName = AM2-1.5.0-hotfix.jar
+side = both
+
+[ASM Fixes]
+type = curseforge
+projectId = 244171
+fileId = 2294974
+destination = mods/ASMFixes-1.0.jar
+side = both
+
+[Audino]
+type = modrinth
+versionId = IWieTo3r
+destination = mods/Audino-1.1.1.jar
+sourceFileName = Audino-1.1.1.jar
+side = both
+
+[Avaritia]
+type = curseforge
+projectId = 233785
+fileId = 2519595
+destination = mods/Avaritia-1.13.jar
+side = both
+
+[Avaritiaddons]
+type = curseforge
+projectId = 248873
+fileId = 2502196
+destination = mods/Avaritiaddons-1.4b.jar
+side = both
+
+[Baubles Expanded]
+type = modrinth
+versionId = uVJG9ptZ
+destination = mods/BaublesExpanded-2.1.4.jar
+sourceFileName = BaublesExpanded-2.1.4.jar
+side = both
+
+[BetterFPS]
+type = curseforge
+projectId = 229876
+fileId = 2244002
+destination = mods/BetterFps-1.0.1.jar
+side = both
+
+[Blood Magic: Alchemical Wizardry]
+type = url
+url = https://github.com/GTNewHorizons/BloodMagic/releases/download/1.3.25/BloodMagic-1.3.25.jar
+destination = mods/BloodMagic-1.3.25.jar
+MD5 = 
+side = both
+
+[Botania]
+type = url
+url = https://github.com/GTNewHorizons/Botania/releases/download/1.9.16-GTNH/Botania-1.9.16-GTNH.jar
+destination = mods/Botania-1.9.16-GTNH.jar
+MD5 = 
+side = both
+
+[Brandon's Core]
+type = url
+url = https://github.com/GTNewHorizons/BrandonsCore/releases/download/1.0.0.13-GTNH/BrandonsCore-1.7.10-1.0.0.13-GTNH.jar
+destination = mods/BrandonsCore-1.7.10-1.0.0.13-GTNH.jar
+MD5 = 
+side = both
+
+[BugTorch]
+type = modrinth
+versionId = deAaraho
+destination = mods/bugtorch-1.2.7.jar
+sourceFileName = bugtorch-1.2.7.jar
+side = both
+
+[Buildcraft Core]
+type = modrinth
+versionId = S2d1nFLM
+destination = mods/buildcraft-7.1.25-core.jar
+sourceFileName = buildcraft-7.1.25-core.jar
+side = both
+
+[Buildcraft Core]
+type = modrinth
+versionId = S2d1nFLM
+destination = mods/buildcraft-7.1.25-core.jar
+sourceFileName = buildcraft-7.1.25-core.jar
+side = both
+
+[Buildcraft Builders]
+type = modrinth
+versionId = trXYsJeM
+destination = mods/buildcraft-7.1.25-builders.jar
+sourceFileName = buildcraft-7.1.25-builders.jar
+side = both
+
+[BuildCraft Factory]
+type = modrinth
+versionId = Bx14ogbQ
+destination = mods/buildcraft-7.1.25-factory.jar
+sourceFileName = buildcraft-7.1.25-factory.jar
+side = both
+
+[BuildCraft Silicon]
+type = modrinth
+versionId = sqh1qNq7
+destination = mods/buildcraft-7.1.25-silicon.jar
+sourceFileName = buildcraft-7.1.25-silicon.jar
+side = both
+
+[BuildCraft Robotics]
+type = modrinth
+versionId = AgEIhiJv
+destination = mods/buildcraft-7.1.25-robotics.jar
+sourceFileName = buildcraft-7.1.25-robotics.jar
+side = both
+
+[Buildcraft Compatiblity]
+type = modrinth
+versionId = A7Ic8NJr
+destination = mods/buildcraft-compat-7.1.8.jar
+sourceFileName = buildcraft-compat-7.1.8.jar
+side = both
+
+[Carpenter's Blocks]
+type = url
+url = https://github.com/GTNewHorizons/CarpentersBlocks/releases/download/3.3.8.2-GTNH/CarpentersBlocks-1.7.10-3.3.8.2-GTNH.jar
+destination = mods/CarpentersBlocks-1.7.10-3.3.8.2-GTNH.jar
+side = both
+
+[Chisel]
+type = curseforge
+projectId = 235279
+fileId = 2287442
+destination = mods/Chisel-2.9.5.11.jar
+side = both
+
+[Chunk Purge]
+type = curseforge
+projectId = 237027
+fileId = 2263206
+destination = mods/ChunkPurge-1.7.10-2.1.jar
+side = both
+
+[CodeChickenCore]
+type = modrinth
+versionId = uK1V66Fl
+destination = mods/CodeChickenCore-1.1.11.jar
+sourceFileName = CodeChickenCore-1.1.11.jar
+side = both
+
+[CodeChickenLib]
+type = modrinth
+versionId = 7rlH2gFw
+destination = mods/1.7.10/CodeChickenLib-1.1.8.jar
+sourceFileName = CodeChickenLib-1.1.8.jar
+side = both
+
+[Controlling]
+type = url
+url = http://jenkins.usrv.eu:8081/nexus/content/groups/public/com/github/GTNewHorizons/Controlling/1.0.0.4/Controlling-1.0.0.4.jar
+destination = mods/Controlling-1.0.0.4.jar
+side = both
+
+[Core Tweaks]
+type = url
+url = https://github.com/makamys/CoreTweaks/releases/download/0.3.0.3/CoreTweaks-1.7.10-0.3.0.3.jar
+destination = mods/CoreTweaks-1.7.10-0.3.0.3.jar
+MD5 = 
+side = both
+
+[Custom Main Menu]
+type = url
+url = http://jenkins.usrv.eu:8081/nexus/content/groups/public/com/github/GTNewHorizons/Custom-Main-Menu/1.9.4/Custom-Main-Menu-1.9.4.jar
+destination = mods/Custom-Main-Menu-1.9.4.jar
+side = both
+
+[Damage Tilt]
+type = curseforge
+projectId = 411705
+fileId = 3097543
+destination = mods/DamageTilt-1.7.10-0.1.0.jar
+side = both
+
+[Draconic Evolution]
+type = url
+url = https://github.com/GTNewHorizons/Draconic-Evolution/releases/download/1.1.15-GTNH/Draconic-Evolution-1.1.15-GTNH.jar
+destination = mods/Draconic-Evolution-1.1.15-GTNH.jar
+MD5 = 
+side = both
+
+[Electrical Age - jrddunbr's edition]
+type = modrinth
+versionId = kRyZ6phk
+destination = mods/ElectricalAge-jrddunbr-1.18.3.jar
+sourceFileName = ElectricalAge-jrddunbr-1.18.3.jar
+side = both
+
+[Ender Core]
+type = url
+url = https://github.com/GTNewHorizons/EnderCore/releases/download/0.2.13/endercore-0.2.13.jar
+destination = mods/endercore-0.2.13.jar
+MD5 = 
+side = both
+
+[Ender IO Unofficial]
+type = url
+url = https://github.com/GTNewHorizons/EnderIO/releases/download/2.4.9/EnderIO-2.4.9.jar
+destination = mods/EnderIO-2.4.9.jar
+MD5 = 
+side = both
+
+[Ender Storage]
+type = url
+url = https://github.com/GTNewHorizons/EnderStorage/releases/download/1.4.12/EnderStorage-1.7.10-1.4.12.jar
+destination = mods/EnderStorage-1.7.10-1.4.12.jar
+MD5 = 
+side = both
+
+[Eternal Singularity]
+type = curseforge
+projectId = 253077
+fileId = 2577977
+destination = mods/EternalSingularity-1.7.10-1.0.4b.jar
+side = both
+
+[Flying Cullers]
+type = modrinth
+versionId = fQNjMIes
+destination = mods/FlyingCullers-1.7.10-1.3.jar
+sourceFileName = FlyingCullers-1.7.10-1.3.jar
+side = client
+
+[GTNH Lib]
+type = modrinth
+versionId = Xn4O8qI1
+destination = mods/gtnhlib-0.0.13.jar
+sourceFileName = gtnhlib-0.0.13.jar
+side = both
+
+[HodgePodge]
+type = modrinth
+versionId = a7qt1tE6
+destination = mods/hodgepodge-2.2.5.jar
+sourceFileName = hodgepodge-2.2.5.jar
+side = both
+
+[Iguana's Tinkers Tweaks]
+type = url
+url = https://github.com/GTNewHorizons/IguanaTweaksTConstruct/releases/download/2.2.9/IguanaTweaksTConstruct-2.2.9.jar
+destination = mods/IguanaTweaksTConstruct-2.2.9.jar
+MD5 = 
+side = both
+
+[Inventory Tweaks]
+type = url
+url = http://jenkins.usrv.eu:8081/nexus/content/groups/public/com/github/GTNewHorizons/inventory-tweaks/1.5.16/inventory-tweaks-1.5.16.jar
+destination = mods/inventory-tweaks-1.5.16.jar
+side = both
+
+[It's the Little Things]
+type = url
+url = http://jenkins.usrv.eu:8081/nexus/content/groups/public/com/github/GTNewHorizons/inventory-tweaks/1.5.16/inventory-tweaks-1.5.16.jar
+destination = mods/inventory-tweaks-1.5.16.jar
+side = both
+
+[Logistics Pipes]
+type = url
+url = https://github.com/GTNewHorizons/LogisticsPipes/releases/download/1.0.0-GTNH/logisticspipes-1.0.0-GTNH.jar
+destination = mods/logisticspipes-1.0.0-GTNH.jar
+MD5 = 
+side = both
+
+[Mantle]
+type = url
+url = https://github.com/GTNewHorizons/Mantle/releases/download/0.3.6/Mantle-0.3.6.jar
+destination = mods/Mantle-0.3.6.jar
+MD5 = 
+side = both
+
+[Mekanism Community Edition: Core]
+type = modrinth
+versionId = FqDIZP6S
+destination = mods/Mekanism-Community-Edition-1.7.10-9.10.26-ALL.jar
+sourceFileName = Mekanism-Community-Edition-1.7.10-9.10.26-ALL.jar
+side = both
+
+[Modular UI]
+type = url
+url = https://github.com/GTNewHorizons/ModularUI/releases/download/1.1.2/modularui-1.1.2.jar
+destination = mods/modularui-1.1.2.jar
+MD5 = 
+side = both
+
+[Not Enough Items Unofficial]
+type = modrinth
+versionId = vwenATWR
+destination = mods/NotEnoughItems-2.3.42-GTNH-pre.jar
+sourceFileName = NotEnoughItems-2.3.42-GTNH-pre.jar
+side = both
+
+[Not Fine]
+type = url
+url = https://github.com/jss2a98aj/NotFine/releases/download/alpha-20/notfine-alpha-20.jar
+destination = mods/notfine-alpha-20.jar
+MD5 = 
+side = client
+
+[Spice Of Life]
+type = modrinth
+versionId = gG0DYyuO
+destination = mods/SpiceOfLife-2.0.9-carrot.jar
+sourceFileName = SpiceOfLife-2.0.9-carrot.jar
+side = both
+
+[Steve's Carts 2]
+type = url
+url = https://github.com/GTNewHorizons/SC2/releases/download/2.0.2/StevesCarts-1.7.10-2.0.2.jar
+destination = mods/StevesCarts-1.7.10-2.0.2.jar
+MD5 = 
+side = both
+
+[Steve's Factory Manager]
+type = url
+url = https://github.com/GTNewHorizons/Steve-s-Factory-Manager/releases/download/1.1.7-GTNH/StevesFactoryManager-1.1.7-GTNH.jar
+destination = mods/StevesFactoryManager-1.1.7-GTNH.jar
+MD5 = 
+side = both
+
+[Tinker's Construct]
+type = url
+url = https://github.com/GTNewHorizons/TinkersConstruct/releases/download/1.9.25-GTNH/TConstruct-1.9.25-GTNH.jar
+destination = mods/TConstruct-1.9.25-GTNH.jar
+MD5 = 
+side = both
+
+[TX Loader]
+type = modrinth
+versionId = k2ramWD3
+destination = mods/txloader-1.5.2.jar
+sourceFileName = txloader-1.5.2.jar
+side = both
+
+[Universal Singularities]
+type = curseforge
+projectId = 252200
+fileId = 2350157
+destination = mods/Universal Singularities [Version 8]-1.7.10.jar
+side = both
+
+[Wanion Library]
+type = curseforge
+projectId = 253043
+fileId = 2430662
+destination = mods/WanionLib-1.7.10-1.8.jar
+side = both
+
+[What am i Looking At]
+type = url
+url = https://github.com/GTNewHorizons/waila/releases/download/1.5.24/Waila-1.5.24.jar
+destination = mods/Waila-1.5.24.jar
+MD5 = 
+side = both
+
+[UniQ]
+type = curseforge
+projectId = 261029
+fileId = 2938923
+destination = mods/uniq-1.7.jar
+side = both

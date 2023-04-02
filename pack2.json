@@ -1,0 +1,126 @@
+		{
+			"name": "Infernal Mobs",
+			"type": "github",
+			"projectid": "GTNewHorizons/Infernal-Mobs",
+			"side": "both"
+		},
+		{
+			"name": "Mouse Tweaks",
+			"type": "github",
+			"projectid": "GTNewHorizons/MouseTweaks",
+			"side": "both"
+		},
+		{
+			"name": "Not Enough Energistics",
+			"type": "github",
+			"projectid": "GTNewHorizons/NotEnoughEnergistics",
+			"side": "both"
+		},
+		{
+			"name": "Not Enough Items: Integration",
+			"type": "github",
+			"projectid": "GTNewHorizons/NEI-Integration",
+			"side": "both"
+		},
+		{
+			"name": "Not Enough Items: Addons",
+			"type": "github",
+			"projectid": "GTNewHorizons/neiaddons",
+			"side": "both"
+		},
+		{
+			"name": "Open Blocks",
+			"type": "github",
+			"projectid": "GTNewHorizons/OpenBlocks",
+			"side": "both"
+		},
+		{
+			"name": "Open Mods Library",
+			"type": "github",
+			"projectid": "GTNewHorizons/OpenModsLib",
+			"side": "both"
+		},
+		{
+			"name": "Open Modular Turrets",
+			"type": "github",
+			"projectid": "GTNewHorizons/OpenModularTurrets",
+			"side": "both"
+		},
+		{
+			"name": "Special AI",
+			"type": "github",
+			"projectid": "GTNewHorizons/SpecialAI",
+			"side": "both"
+		},
+		{
+			"name": "Special Mobs",
+			"type": "github",
+			"projectid": "GTNewHorizons/SpecialMobs",
+			"side": "both"
+		},
+		{
+			"name": "What am i Looking At: Harvestability",
+			"type": "github",
+			"projectid": "GTNewHorizons/WailaHarvestability",
+			"side": "both"
+		},
+		{
+			"name": "What am i Looking At: Plugins",
+			"type": "url",
+			"projectid": "http://jenkins.usrv.eu:8081/nexus/content/groups/public/com/github/GTNewHorizons/WAILAPlugins/0.2.5/WAILAPlugins-0.2.5.jar",
+			"side": "both"
+		},
+		{
+			"name": "What are we Looking At",
+			"type": "github",
+			"projectid": "GTNewHorizons/WAWLA",
+			"side": "both"
+		},
+		{
+			"name": "Wireless Crafting Terminal",
+			"type": "github",
+			"projectid": "GTNewHorizons/WirelessCraftingTerminal",
+			"side": "both"
+		},
+		{
+			"name": "Wireless Redstone: ChickenBonesEdition",
+			"type": "github",
+			"projectid": "GTNewHorizons/WirelessRedstone-CBE",
+			"side": "both"
+		},
+		{
+			"name": "Inpure Core",
+			"type": "github",
+			"projectid": "GTNewHorizons/INpureCore",
+			"side": "both"
+		},
+		{
+			"name": "Ender Zoo",
+			"type": "github",
+			"projectid": "GTNewHorizons/EnderZoo",
+			"side": "both"
+		},
+		{
+			"name": "Default World Generator",
+			"type": "github",
+			"projectid": "GTNewHorizons/DefaultWorldGenerator",
+			"side": "both"
+		},
+		{
+			"name": "Adventure Backpack",
+			"type": "github",
+			"projectid": "GTNewHorizons/AdventureBackpack2",
+			"side": "both"
+		},
+		{
+			"name": "Tinker's Mechworks",
+			"type": "github",
+			"projectid": "GTNewHorizons/TinkersMechworks",
+			"side": "both"
+		},
+		{
+			"name": "Tinker's Defense",
+			"type": "github",
+			"projectid": "GTNewHorizons/Tinkers-Defense",
+			"side": "both"
+		},

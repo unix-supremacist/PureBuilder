@@ -16,6 +16,7 @@ import (
 	"encoding/hex"
 	"archive/zip"
 	"path/filepath"
+	cp "github.com/otiai10/copy"
 )
 
 var pack Pack
@@ -25,6 +26,7 @@ type Pack struct {
 	Name string `json:"name"`
 	Version string `json:"version"`
 	MinecraftVersion string `json:"mcv"`
+	hashgit bool `json:"hashgit"`
 	Mods []struct {
 		Name string `json:"name"`
 		Modtype string `json:"type"`
@@ -75,35 +77,57 @@ func main(){
 	eror(os.RemoveAll("bld"))
 	createdirs()
 	jsonparse()
-	download("https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar")
-	copy("tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "bld/technic/bin/modpack.jar")
+	cp.Copy("src", "bld/generic/.minecraft")
 	downloadmcil()
 	downloadunimixins()
-	downloadlwjgl3ify()
 	createinstance()
-	copy("8.json", "bld/multimc/mmc-pack.json")
 	createpackconfig()
+	copydirs()
+	downloadforge()
+	downloadlwjgl3ify()
+	copy("8.json", "bld/multimc/mmc-pack.json")
 	zipdirs()
+}
+
+func createdirs(){
+	eror(os.MkdirAll("bld/multimc/.minecraft/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/polymc/.minecraft/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/technic/bin", os.ModePerm))
+	eror(os.MkdirAll("bld/modrinth/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/curse/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/generic/.minecraft/mods", os.ModePerm))
+	eror(os.MkdirAll("bld/generic/.minecraft/config/mcinstanceloader", os.ModePerm))
+	eror(os.MkdirAll("tmp", os.ModePerm))
+	eror(os.MkdirAll("src/config", os.ModePerm))
+	eror(os.MkdirAll("src/modpack", os.ModePerm))
+	eror(os.MkdirAll("src/mods", os.ModePerm))
+	eror(os.MkdirAll("out", os.ModePerm))
+	eror(os.MkdirAll("pack", os.ModePerm))
 }
 
 func downloadmcil(){
 	modrinthMod := apiModrinth("cUtsYbG5", pack.MinecraftVersion)
 	download(modrinthMod[0].Files[0].Url, "tmp/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/multimc/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/polymc/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/technic/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/modrinth/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/curse/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/generic/.minecraft/mods/"+modrinthMod[0].Files[0].Filename)
 }
 
 func downloadunimixins(){
 	modrinthMod := apiModrinth("ghjoiQAl", pack.MinecraftVersion)
 	download(modrinthMod[0].Files[0].Url, "tmp/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/multimc/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/polymc/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/technic/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/modrinth/mods/"+modrinthMod[0].Files[0].Filename)
-	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/curse/mods/"+modrinthMod[0].Files[0].Filename)
+	copy("tmp/"+modrinthMod[0].Files[0].Filename, "bld/generic/.minecraft/mods/"+modrinthMod[0].Files[0].Filename)
+}
+
+func copydirs(){
+	eror(cp.Copy("bld/generic", "bld/multimc"))
+	eror(cp.Copy("bld/generic", "bld/polymc"))
+	eror(cp.Copy("bld/generic/.minecraft", "bld/technic"))
+	eror(cp.Copy("bld/generic/.minecraft", "bld/modrinth"))
+	eror(cp.Copy("bld/generic/.minecraft", "bld/curse"))
+}
+
+func downloadforge(){
+	download("https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar")
+	copy("tmp/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "bld/technic/bin/modpack.jar")
 }
 
 func downloadlwjgl3ify(){
@@ -111,22 +135,7 @@ func downloadlwjgl3ify(){
 	download(githubMod.Url, "tmp/"+githubMod.Filename)
 	download(githubMod.MMCUrl, "tmp/"+filenamefromurl(githubMod.MMCUrl))
 	unzip("tmp/"+filenamefromurl(githubMod.MMCUrl), "bld/polymc/")
-	copy("tmp/"+githubMod.Filename, "bld/polymc/mods/"+githubMod.Filename)
-}
-
-func createdirs(){
-	eror(os.MkdirAll("bld/multimc/mods", os.ModePerm))
-	eror(os.MkdirAll("bld/polymc/mods", os.ModePerm))
-	eror(os.MkdirAll("bld/technic/bin", os.ModePerm))
-	eror(os.MkdirAll("bld/technic/mods", os.ModePerm))
-	eror(os.MkdirAll("bld/modrinth/mods", os.ModePerm))
-	eror(os.MkdirAll("bld/curse/mods", os.ModePerm))
-	//eror(os.MkdirAll("bld/generic", os.ModePerm))
-	eror(os.MkdirAll("tmp", os.ModePerm))
-	eror(os.MkdirAll("src/config", os.ModePerm))
-	eror(os.MkdirAll("src/modpack", os.ModePerm))
-	eror(os.MkdirAll("src/mods", os.ModePerm))
-	eror(os.MkdirAll("out", os.ModePerm))
+	copy("tmp/"+githubMod.Filename, "bld/polymc/.minecraft/mods/"+githubMod.Filename)
 }
 
 func zipdirs(){
@@ -144,8 +153,7 @@ func createinstance(){
 	writeline(f, "InstanceType=OneSix\n")
 	writeline(f, "iconKey=flame\n")
 	writeline(f, "name="+pack.Name+"\n")
-	copy("tmp/instance.cfg", "bld/multimc/instance.cfg")
-	copy("tmp/instance.cfg", "bld/polymc/instance.cfg")
+	copy("tmp/instance.cfg", "bld/generic/instance.cfg")
 }
 
 func jsonparse(){
@@ -225,7 +233,7 @@ func request(s string) []byte{
 }
 
 func createpackconfig(){
-	f, err := os.Create("pack.mcinstance")
+	f, err := os.Create("pack/resources.packconfig")
 	eror(err)
 	defer f.Close()
 	for i:=0; i < len(pack.Mods); i++ {
@@ -265,9 +273,9 @@ func createpackconfig(){
 				writeline(f, "destination = mods/"+curseforgeMod.Data[0].Filename+"\n")
 			}
 		}
-		if pack.Mods[i].Modtype == "github" {
+		/*if pack.Mods[i].Modtype == "github" {
 			writeline(f, "type = url\n")
-			githubMod := apiGithub(pack.Mods[i].Projectid, true)
+			githubMod := apiGithub(pack.Mods[i].Projectid, pack.hashgit)
 			writeline(f, "url = "+githubMod.Url+"\n")
 			if len(pack.Mods[i].Destination) > 0 {
 				logger.Println("github destination hard overwrote for project "+pack.Mods[i].Projectid+" to "+pack.Mods[i].Destination)
@@ -276,9 +284,26 @@ func createpackconfig(){
 				writeline(f, "destination = mods/"+githubMod.Filename+"\n")
 			}
 			writeline(f, "MD5 = "+githubMod.MD5+"\n")
+		}*/
+		if pack.Mods[i].Modtype == "url" {
+			writeline(f, "type = url\n")
+			writeline(f, "url = "+pack.Mods[i].Projectid+"\n")
+			Filename := filenamefromurl(pack.Mods[i].Projectid)
+			if len(pack.Mods[i].Destination) > 0 {
+				logger.Println("url destination hard overwrote for project "+pack.Mods[i].Projectid+" to "+pack.Mods[i].Destination)
+				writeline(f, "destination = "+Filename+"\n")
+			} else {
+				writeline(f, "destination = mods/"+Filename+"\n")
+			}
+			if(pack.hashgit == true){
+				download(pack.Mods[i].Projectid, "tmp/"+Filename)
+				MD5 := md5file("tmp/"+Filename)
+				writeline(f, "MD5 = "+MD5+"\n")
+			}
 		}
 		writeline(f, "side = "+pack.Mods[i].Side+"\n")
 	}
+	zipfile("pack/", "bld/generic/.minecraft/config/mcinstanceloader/pack.mcinstance")
 }
 
 func writeline(f *os.File, s string){
