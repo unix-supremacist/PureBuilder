@@ -1,4 +1,4 @@
-module unix-supremacist.codeberg.page/mad2rando
+module unix-supremacist.codeberg.page/purebuilder
 
 go 1.20
 

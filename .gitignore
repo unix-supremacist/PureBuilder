@@ -7,3 +7,4 @@ go.work
 *.jar
 *.zip
 bld/*
+purebuilder
